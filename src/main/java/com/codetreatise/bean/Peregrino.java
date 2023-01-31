@@ -1,6 +1,7 @@
 package com.codetreatise.bean;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -27,11 +29,15 @@ public class Peregrino {
 	private String nombre;
 	
 	private String nacionalidad;
+	
+	//arraylist de la relacion con estancias
+	ArrayList<Estancia> estancias = new ArrayList<Estancia>();
+
 
 	
-	//esto indica que esta en una reacion de uno con uno con carnet 
-	@OneToOne
-	@JoinColumn
+	//esto indica que esta en una relacion de uno con uno con carnet 
+	@OneToOne(optional = false)
+	@MapsId //mapea el id del peregrino y va a coincidir con id del carnet
 	private Carnet carnet;
 	
 	

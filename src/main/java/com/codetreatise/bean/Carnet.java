@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -23,13 +24,13 @@ public class Carnet {
 	@Column(updatable = true , nullable = false)//aqui decimos que el id se puede insertar pero no actualizar(en principio esta anitacion ira en todas las columnas)
 	//tambien podria ir aqui la anotacion @Inmutable y hara lo mismo de excluir el atrubuto de los updates!
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	long idperegrino;
+	private long idperegrino;
 	
-	LocalDate fechaexp;
+	private LocalDate fechaexp;
 	
-	double distanciaRecorrida;
+	private double distanciaRecorrida;
 	
-	int n_vips;
+	private int n_vips;
 	
 	
 
