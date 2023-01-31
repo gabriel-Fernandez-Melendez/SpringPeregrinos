@@ -23,7 +23,7 @@ public class Parada {
 	//implementar las secuencias en todas las clases
 	@SequenceGenerator(name="Paradasequence",sequenceName= "ParadaSQL")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Paradasequence")
-	@Column(name = "id", updatable = false, nullable = false)
+	@Column(name = "id_parada", updatable = false, nullable = false)
 	long id_parada;
 	
 	String nombreparada;
