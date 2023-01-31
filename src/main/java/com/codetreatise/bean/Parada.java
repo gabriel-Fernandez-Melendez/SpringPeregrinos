@@ -1,10 +1,13 @@
 package com.codetreatise.bean;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
@@ -30,8 +33,19 @@ public class Parada {
 	
 	char region;
 
+	@ManyToMany(mappedBy = "paradas")
+	ArrayList<Peregrino> Peregrinos = new ArrayList<Peregrino>();
 	
 	public Parada() {
 		
 	}
+
+
+	//importante !! volver a generar todos los strings
+	@Override
+	public String toString() {
+		return "Parada [id_parada=" + id_parada + ", nombreparada=" + nombreparada + ", region=" + region + "]";
+	}
+	
+	
 }

@@ -33,11 +33,18 @@ public class Carnet {
 	
 	private int n_vips;
 	
+	//deberia incluir aqui un peregrino para hacerlo bidireccional ?
 	
 
 	//constructor por defecto
 	public Carnet() {
 		
+	}
+
+	@Override
+	public String toString() {
+		return "Carnet [idperegrino=" + idperegrino + ", fechaexp=" + fechaexp + ", distanciaRecorrida="
+				+ distanciaRecorrida + ", n_vips=" + n_vips + "]";
 	}
 	
 	

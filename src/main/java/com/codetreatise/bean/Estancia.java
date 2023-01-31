@@ -38,4 +38,12 @@ public class Estancia {
 	//campo de relacion con la clase parada
 	@OneToOne(optional = false)
 	private Parada parada;
+
+	@Override
+	public String toString() {
+		return "Estancia [id_estancia=" + id_estancia + ", fecha=" + fecha + ", esvip=" + esvip + ", peregrino="
+				+ peregrino + ", parada=" + parada + "]";
+	}
+	
+	
 }
