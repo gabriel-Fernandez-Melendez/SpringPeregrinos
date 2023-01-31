@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -21,9 +22,9 @@ public class Carnet {
 	//valores de la clase
 	
 	@Id  //el id que ira a base de datos del programa
-	@Column(updatable = true , nullable = false)//aqui decimos que el id se puede insertar pero no actualizar(en principio esta anitacion ira en todas las columnas)
-	//tambien podria ir aqui la anotacion @Inmutable y hara lo mismo de excluir el atrubuto de los updates!
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(name="Carnetsequence",sequenceName= "CarnetSQL")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Carnetsequence")
+	@Column(name = "id_Carnet", updatable = false, nullable = false)
 	private long idperegrino;
 	
 	private LocalDate fechaexp;
