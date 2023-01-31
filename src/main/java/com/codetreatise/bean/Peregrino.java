@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -22,7 +23,8 @@ import lombok.Setter;
 public class Peregrino {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(name="Peregrinosequence",sequenceName= "PeregrinoSQL")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Peregrinosequence")
 	@Column(name = "id", updatable = false, nullable = false)
 	private long id;
 	

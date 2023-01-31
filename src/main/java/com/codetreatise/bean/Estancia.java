@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,8 +22,9 @@ import lombok.Setter;
 public class Estancia {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id", updatable = false, nullable = false)
+	@SequenceGenerator(name="Estanciasequence",sequenceName= "EstanciaSQL")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Estanciasequence")
+	@Column(name = "id_estancia", updatable = false, nullable = false)
 	private long id_estancia;
 	
 	private LocalDate fecha;
@@ -31,4 +34,8 @@ public class Estancia {
 	//campo peregrino de la relacion estancia peregrino
 	@ManyToOne(optional = false ) // no configuro el nombre y dejo el por defecto que crea hibernate
 	private Peregrino peregrino;
+	
+	//campo de relacion con la clase parada
+	@OneToOne(optional = false)
+	private Parada parada;
 }
