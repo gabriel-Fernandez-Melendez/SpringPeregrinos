@@ -80,6 +80,7 @@
 		 	<artifactId>ikonli-javafx</artifactId>
 		 	<version>11.5.0</version>
 		 </dependency>
+		 
 	</dependencies>
 	
 	

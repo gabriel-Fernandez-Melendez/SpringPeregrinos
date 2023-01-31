@@ -10,6 +10,8 @@ import javax.persistence.SequenceGenerator;
 import lombok.Getter;
 import lombok.Setter;
 
+//importante, al implementar la secuencia el objeto no se guarda hasta usar el metodo flush 
+
 //objeto parada a implementar en la base de datosde spring 
 @Entity
 @Getter
@@ -27,6 +29,7 @@ public class Parada {
 	String nombreparada;
 	
 	char region;
+
 	
 	public Parada() {
 		
