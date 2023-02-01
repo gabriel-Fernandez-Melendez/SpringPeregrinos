@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
@@ -32,7 +32,9 @@ public class Estancia {
 	private boolean esvip;
 	
 	//campo peregrino de la relacion estancia peregrino
-	@ManyToOne(optional = false ) // no configuro el nombre y dejo el por defecto que crea hibernate
+	@ManyToOne() // no configuro el nombre y dejo el por defecto que crea hibernate
+	//hay algun error aqui que no permite la union de las claves de forma correcta 
+	@JoinColumn
 	private Peregrino peregrino;
 	
 	//campo de relacion con la clase parada

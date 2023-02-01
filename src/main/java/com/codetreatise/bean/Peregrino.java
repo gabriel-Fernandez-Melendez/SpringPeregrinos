@@ -8,14 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.MapsId;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Getter;
 import lombok.Setter;
+import java.util.List;
 
 @Entity
 @Getter
@@ -34,16 +33,15 @@ public class Peregrino {
 	
 	//arraylist de la relacion con estancias
 	@OneToMany(mappedBy = "peregrino")
-	ArrayList<Estancia> estancias = new ArrayList<Estancia>();
+	List<Estancia> estancias = new ArrayList<Estancia>();
 
 	//arraylist de la relacion con paradas manytomany
 	@ManyToMany
-	ArrayList<Parada> Paradas = new ArrayList<Parada>();
+	List<Parada> paradas = new ArrayList<Parada>();
 
 	
 	//esto indica que esta en una relacion de uno con uno con carnet 
 	@OneToOne(optional = false)
-	@MapsId //mapea el id del peregrino y va a coincidir con id del carnet
 	private Carnet carnet;
 	
 	

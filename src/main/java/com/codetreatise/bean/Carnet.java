@@ -24,8 +24,8 @@ public class Carnet {
 	@Id  //el id que ira a base de datos del programa
 	@SequenceGenerator(name="Carnetsequence",sequenceName= "CarnetSQL")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Carnetsequence")
-	@Column(name = "id_Carnet", updatable = false, nullable = false)
-	private long idperegrino;
+	@Column(name = "id", updatable = false, nullable = false)
+	private long id;
 	
 	private LocalDate fechaexp;
 	
@@ -41,11 +41,7 @@ public class Carnet {
 		
 	}
 
-	@Override
-	public String toString() {
-		return "Carnet [idperegrino=" + idperegrino + ", fechaexp=" + fechaexp + ", distanciaRecorrida="
-				+ distanciaRecorrida + ", n_vips=" + n_vips + "]";
-	}
+
 	
 	
 	
