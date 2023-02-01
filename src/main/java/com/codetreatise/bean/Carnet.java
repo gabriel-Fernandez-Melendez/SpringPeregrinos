@@ -25,7 +25,7 @@ public class Carnet {
 	@SequenceGenerator(name="Carnetsequence",sequenceName= "CarnetSQL")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Carnetsequence")
 	@Column(name = "id", updatable = false, nullable = false)
-	private long id;
+	private long id_c;
 	
 	private LocalDate fechaexp;
 	
@@ -34,7 +34,12 @@ public class Carnet {
 	private int n_vips;
 	
 	//deberia incluir aqui un peregrino para hacerlo bidireccional ?
+	@OneToOne(mappedBy = "carnet")
+	private Peregrino peregrino;
 	
+	//esta es la relacion con la parada donde se emite el carnets
+	@OneToOne()
+	private Parada parada;
 
 	//constructor por defecto
 	public Carnet() {

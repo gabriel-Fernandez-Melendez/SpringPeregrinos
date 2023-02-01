@@ -2,16 +2,9 @@ package com.codetreatise.bean;
 
 import java.time.LocalDate;
 
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.*;
-import javax.persistence.SequenceGenerator;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +12,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@Data
 public class Estancia {
 
 	@Id
@@ -31,21 +25,21 @@ public class Estancia {
 	
 	private boolean esvip;
 	
-	//campo peregrino de la relacion estancia peregrino
-	@ManyToOne() // no configuro el nombre y dejo el por defecto que crea hibernate
-	//hay algun error aqui que no permite la union de las claves de forma correcta 
-	@JoinColumn
-	private Peregrino peregrino;
-	
 	//campo de relacion con la clase parada
-	@OneToOne(optional = false)
+	@OneToOne(optional = false) //deberia estar bien de esta manera , sin necesidad de poner otra anotacion en la clase parada
 	private Parada parada;
+	
+	//campo peregrino de la relacion estancia peregrino
+	 // no configuro el nombre y dejo el por defecto que crea hibernate
+	//ahora no me da error pero quite la anotacin de many to one del lado del peregrino 
+	@ManyToOne()
+	@JoinColumn()
+	//parece que funciona, no volver a tocar hasta el viernes 
+	private Peregrino per;
+	
+	
 
-	@Override
-	public String toString() {
-		return "Estancia [id_estancia=" + id_estancia + ", fecha=" + fecha + ", esvip=" + esvip + ", peregrino="
-				+ peregrino + ", parada=" + parada + "]";
-	}
+
 	
 	
 }

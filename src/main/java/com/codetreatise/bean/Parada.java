@@ -8,9 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.*;
 
 //importante, al implementar la secuencia el objeto no se guarda hasta usar el metodo flush 
 
@@ -19,10 +19,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Parada {
-
-	@Id
-	//asi creo una secuencia que es la quefenira el id de la clase en la base de datos(queda comentado de momento)
+//asi creo una secuencia que es la quefenira el id de la clase en la base de datos(queda comentado de momento)
 	//implementar las secuencias en todas las clases
+	@Id
 	@SequenceGenerator(name="Paradasequence",sequenceName= "ParadaSQL")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator= "Paradasequence")
 	@Column(name = "id", updatable = false, nullable = false)
@@ -33,7 +32,9 @@ public class Parada {
 	char region;
 
 	@ManyToMany(mappedBy = "paradas")
-	 List<Peregrino> Peregrinos;
+	Set<Peregrino> Peregrinos;
+	
+	
 	
 	public Parada() {
 		
