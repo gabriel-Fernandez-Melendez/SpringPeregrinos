@@ -23,7 +23,7 @@ public class Estancia {
 	
 	private LocalDate fecha;
 	
-	private boolean esvip;
+	private boolean esvip = false;
 	
 	//campo de relacion con la clase parada
 	@OneToOne(optional = false) //deberia estar bien de esta manera , sin necesidad de poner otra anotacion en la clase parada

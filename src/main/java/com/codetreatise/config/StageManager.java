@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 /**
  * Manages switching Scenes on the Primary Stage
  */
+// NO TENGO QUE TOCAR ESTA CLASE
 public class StageManager {
 
     private static final Logger LOG = getLogger(StageManager.class);
