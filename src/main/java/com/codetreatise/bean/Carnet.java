@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,6 +18,7 @@ import lombok.Setter;
 //estas anotaciones me permiten no tener que declarar en los getters y setter en los pojos de clase
 @Getter
 @Setter
+@Data
 public class Carnet {
 
 	//valores de la clase

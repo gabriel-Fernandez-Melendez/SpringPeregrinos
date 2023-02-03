@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
+
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.*;
@@ -18,6 +20,7 @@ import java.util.*;
 @Entity
 @Getter
 @Setter
+@Data
 public class Parada {
 //asi creo una secuencia que es la quefenira el id de la clase en la base de datos(queda comentado de momento)
 	//implementar las secuencias en todas las clases

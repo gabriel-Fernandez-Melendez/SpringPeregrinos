@@ -3,7 +3,6 @@ package com.codetreatise.bean;
 
 import java.util.*;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +11,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.*;
 import javax.persistence.SequenceGenerator;
 
-
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Data
 public class Peregrino {
 	
 	@Id
@@ -50,6 +50,7 @@ public class Peregrino {
 		
 	}
 
+	
 
 	
 	
