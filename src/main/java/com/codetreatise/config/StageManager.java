@@ -18,6 +18,7 @@ import javafx.stage.Stage;
  */
 // NO TENGO QUE TOCAR ESTA CLASE
 public class StageManager {
+	//fgtbtnytb
 
     private static final Logger LOG = getLogger(StageManager.class);
     private final Stage primaryStage;
